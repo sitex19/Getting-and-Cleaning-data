@@ -57,4 +57,4 @@ library(reshape2)
 features_melt<- melt(features_mean_std,id.vars=c("subject","activity"))
 tidy_dataset <- dcast(features_melt, subject + activity ~ ..., mean)
 
-return(tidy_dataset)
+write.table(tidy_dataset, "tidy_data.txt")
